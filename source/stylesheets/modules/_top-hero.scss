@@ -1,0 +1,35 @@
+// *************************************
+//
+//   Top Hero
+//   -> .top-hero
+//
+// *************************************
+
+.top-hero {
+
+	margin-top: -40px !important;;
+
+	@include border-radius(0.1875rem);
+	background-color: #333;
+
+	iframe {
+		max-width: 100%;
+	}
+
+	> div {
+		padding: 0;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	.vertical.menu {
+
+		* {
+			@include border-radius(0);
+		}
+
+		width: 100% !important;
+		border-left: 0px;
+
+	}
+}

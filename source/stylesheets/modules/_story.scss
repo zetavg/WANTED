@@ -1,0 +1,10 @@
+// *************************************
+//
+//   Storys
+//   -> ...
+//
+// *************************************
+
+.story.about {
+	@include background-image(url(/images/bg_1.jpg)); // multiple: comma-delimited
+}

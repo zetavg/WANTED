@@ -1,0 +1,264 @@
+// *************************************
+//
+//	 Layout
+//	 -> Margin, Padding, Sizing
+//
+// *************************************
+
+// -------------------------------------
+//	 Body
+// -------------------------------------
+
+body {
+	overflow-x: hidden;
+}
+
+
+// -------------------------------------
+//	 Main Navbar
+// -------------------------------------
+
+header nav {
+
+	@extend .ui.page.grid;
+	@extend .ui.menu;
+	background-color: rgba(255,255,255,.5);
+
+	.right {
+		@extend %l-pullRight;
+	}
+
+	ul {
+		display: inline-block;
+		width: 100%;
+		padding: 0;
+		@extend %content;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	li > a {
+		@extend .item;
+		text-decoration: none !important;
+	}
+
+	.ui.button {
+		// margin-top: -9px !important;
+	}
+
+
+	// span {
+	// 	position: absolute;
+	// 	top: 0;
+
+	// 	&.right {
+	// 		right: 0;
+	// 	}
+	// }
+}
+
+
+// -------------------------------------
+//	 Header
+// -------------------------------------
+
+header {
+	position: relative;
+	// margin-bottom: 20px;
+}
+
+header .title {
+
+	@extend .ui.page.grid;
+
+	.logo {
+
+		display: inline-block;
+		position: relative;
+
+		* {
+			color: $logo-color !important;
+			&:hover { text-decoration: none !important; }
+		}
+
+		h1 {
+			@include replace-text('logo_text.png');
+			background-size: auto $head-logo-height;
+			margin: 0;
+			height: $head-logo-height;
+			width: $head-logo-width;
+		}
+
+		h2 {
+			@include replace-text('logo_bg.png', 0, 100%);
+			background-size: auto $head-logo-height*2;
+			margin: 0;
+			height: $head-logo-height*2;
+			width: $head-logo-width;
+			position: absolute;
+			display: block;
+			z-index: -1;
+			bottom: 0;
+			left: 0;
+		}
+	}
+
+	.search-box {
+
+		@extend .ui.page.grid;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: inline-block;
+		padding-bottom: ($head-logo-height - 41) / 2;
+
+		.search {
+
+			@extend .ui.action.input;
+			@extend .ui.input;
+			position: relative;
+			margin-left: auto;
+			right: 0;
+			width: calc(100% - 300px);
+
+			a {
+
+				@extend .ui.button;
+				display: table-cell;
+				border-top-left-radius: 0px;
+				border-bottom-left-radius: 0px;
+				white-space: nowrap;
+				font-size: 1rem;
+				text-align: center;
+				width: 82px;
+			}
+		}
+	}
+
+	&::after {
+		content: " ";
+		clear: both;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: $head-logo-height*0.14;
+		background-color: #fff;
+		width: 100%;
+	}
+
+}
+
+// -------------------------------------
+//	 UI
+// -------------------------------------
+
+.ui.page.grid.segment {
+	padding-top: 3.5rem;
+	padding-bottom: 3.5rem;
+}
+
+.ui.header, h1, h2 {
+	font-weight: normal !important;
+}
+
+h1.ui.header {
+	font-size: 3em;
+}
+
+h4.ui.header, h5.ui.header, .ui.icon.header {
+	font-weight: bold !important;
+}
+
+.ui.button {
+	font-weight: normal;
+	text-decoration: none;
+}
+
+a {
+	color: #009FDA;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #00BAFF;
+}
+
+p a {
+	font-weight: bold;
+}
+
+// -------------------------------------
+//	 Bucket
+// -------------------------------------
+
+.l-bucket {}
+
+// -------------------------------------
+//	 Card
+// -------------------------------------
+
+.l-card {}
+
+// -------------------------------------
+//	 Cell
+// -------------------------------------
+
+%l-cell, .l-cell {
+	margin: 0 auto;
+	max-width: rem($l-maxWidth);
+	padding: 0 rem(60px);
+}
+
+// -------------------------------------
+//	 Grid
+// -------------------------------------
+
+.l-grid {}
+
+.l-grid-box {}
+
+// -------------------------------------
+//	 Row
+// -------------------------------------
+
+.l-row {}
+
+// -------------------------------------
+//	 Utilities
+// -------------------------------------
+
+%l-block, .l-block {
+	display: block;
+}
+
+%l-condense, .l-condense {
+	margin-bottom: rem($base-whitespace / 2);
+}
+
+%l-pullLeft, .l-pullLeft {
+	float: left;
+}
+
+%l-pullRight, .l-pullRight {
+	float: right;
+}
+
+%l-space, .l-space {
+	margin-bottom: rem($base-whitespace);
+}
+
+%l-xspace, .l-xspace {
+	margin-bottom: rem($base-whitespace * 2);
+}
+
+
+.pull-right {
+	@extend %l-pullRight;
+}
+
+.pull-left {
+	@extend %l-pullLeft;
+}

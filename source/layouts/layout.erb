@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title><%= (current_page.data.title + ' / ' + data.config.siteName_full) || data.config.siteName_full %></title>
+    <%= stylesheet_link_tag "all" %>
+  </head>
+  <body class="<%= page_classes %>">
+    <header><form action="/search" method="get">
+      <nav>
+        <ul>
+          <li><a href="#"><%= data.config.siteName_full %></a></li>
+          <li><a href="#">免費註冊</a></li>
+          <span class="right">
+            <li><a href="#">會員登入</a></li>
+            <li><a href="#">用戶指南</a></li>
+            <li><a href="#">付款方式</a></li>
+            <li><a href="#">表演者中心</a></li>
+          </span>
+        </ul>
+      </nav>
+      <div class="title">
+        <div class="logo"><a href="/">
+          <hgroup>
+            <h1><%= data.config.siteName_full %></h1>
+            <h2><%= data.config.siteName_explained %></h2>
+          </hgroup>
+        </a></div>
+        <div class="search-box">
+          <div class="search">
+            <input type="text" name="s" placeholder="表演 ／ 風格 ／ 類型 ／ 人 ⋯" autofocus>
+            <a type="submit" onclick="$(this).closest('form').submit()"><i class="search icon"></i></a>
+          </div>
+        </div>
+      </div>
+    </form></header>
+    <%= yield %>
+    <div class="ui inverted teal page grid segment">
+      <div class="ten wide column">
+        <!-- <div class="ui three column stackable grid">
+          <div class="column">
+            <div class="ui header">Courses</div>
+            <div class="ui inverted link list">
+              <a class="item">Registration</a>
+              <a class="item">Course Calendar</a>
+              <a class="item">Professors</a>
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui header">Library</div>
+            <div class="ui inverted link list">
+              <a class="item">A-Z</a>
+              <a class="item">Most Popular</a>
+              <a class="item">Recently Changed</a>
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui header">Community</div>
+            <div class="ui inverted link list">
+              <a class="item">BBS</a>
+              <a class="item">Careers</a>
+              <a class="item">Privacy Policy</a>
+            </div>
+          </div>
+        </div> -->
+      </div>
+      <div class="six wide right floated aligned column">
+        <h3 class="ui header">聯絡我們</h3>
+        <addr>
+        北醫醫綜大樓穿堂 <br>
+        點子市集 <br>
+        </addr>
+        <p>...</p>
+      </div>
+    </div>
+    <%= javascript_include_tag  "all" %>
+  </body>
+</html>
